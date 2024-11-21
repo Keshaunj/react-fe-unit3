@@ -21,7 +21,7 @@ The **Spam Caller Detector** helps users identify and categorize phone numbers a
 ## 🌐 Deployment
 
 - **Front-end:** Deployed on Netlify.
-
+- **Backend:** Deployed on Heroku
 
 ## User View
 https://imgur.com/a/eKj5Gmc
