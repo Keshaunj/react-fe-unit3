@@ -23,6 +23,12 @@ The **Spam Caller Detector** helps users identify and categorize phone numbers a
 - **Front-end:** Deployed on Netlify.
 
 
+## User View
+https://imgur.com/a/eKj5Gmc
+Blurred for Privacy Act of 1974 (5 U.S.C. § 552a)
+
+
+
 ## 🔧 Installation
 
 ```bash
