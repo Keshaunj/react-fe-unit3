@@ -1,6 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { validatePhoneNumber } from "./phoneNumberServices";
+import "./App.css";
 
 const App = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -27,30 +27,32 @@ const App = () => {
   };
 
   return (
-    <main>
+    <div className="app-container">
       <h1>Spam Call Detector</h1>
       <input
         type="tel"
         value={phoneNumber}
         onChange={handleInputChange}
-        placeholder="Enter phone number (ex. +1234567890)"
+        placeholder="Enter phone number"
       />
       <button onClick={handleValidate}>
         {isLoading ? 'Validating...' : 'Search Phone Number'}
       </button>
+      
       {errorMessage && <p>{errorMessage}</p>}
+      
       {responseMessage && (
-        <div>
+        <div className="response-container">
           <p><strong>Valid:</strong> {responseMessage.valid ? 'Yes' : 'No'}</p>
           <p><strong>Number:</strong> {responseMessage.number}</p>
           <p><strong>Location:</strong> {responseMessage.location}</p>
           <p><strong>Carrier:</strong> {responseMessage.carrier}</p>
           <p><strong>Line Type:</strong> {responseMessage.line_type}</p>
-          <p><strong>Country Name: </strong>{responseMessage.country_name}</p>
-          <p><strong>Country Code: </strong>{responseMessage.country_code}</p>
+          <p><strong>Country Name:</strong> {responseMessage.country_name}</p>
+          <p><strong>Country Code:</strong> {responseMessage.country_code}</p>
         </div>
       )}
-    </main>
+    </div>
   );
 };
 
