@@ -1,20 +1,13 @@
+import axios from 'axios';
 
+export const validatePhoneNumber = async (phoneNumber) => {
+  const BASE_URL = 'http://localhost:3000/api/phone/validate/'; 
+  const url = `${BASE_URL}${phoneNumber}`;
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:5000/'; 
-
-const validatePhoneNumber = async (phoneNumber) => {
   try {
-    const res = await fetch(`${BASE_URL}validate/${phoneNumber}`); 
-    if (!res.ok) {
- 
-      throw new Error(`Failed to validate phone number: ${res.status} ${res.statusText}`);
-    }
-    const data = await res.json();
-    return data;
+    const response = await axios.get(url);
+    return response.data; 
   } catch (error) {
-    console.error('Error:', error);
-    throw error; 
+    throw new Error('Error validating phone number with external API');
   }
 };
-
-export { validatePhoneNumber };
