@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000/api/phone/validate/'; 
+const BASE_URL = 'https://spam-detector-backend-4b422dd56792.herokuapp.com/api/phone/validate/'; 
 
 
 const validatePhoneNumber = async (phoneNumber) => {
